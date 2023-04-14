@@ -12,7 +12,7 @@ import {
   RemoveButton,
 } from './checkout-item.styles';
 
-const CheckoutItem = ({ cartItem }) => {
+const   CheckoutItem = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
 
   const { clearItemFromCart, addItemToCart, removeItemToCart } =

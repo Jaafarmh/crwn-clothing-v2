@@ -5,6 +5,16 @@ export const CategoryContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   row-gap: 50px;
+ 
+ 
+
+  @media only screen and (max-width: 900px) {
+
+display:flex;
+flex-direction: column;
+}
+
+
 `;
 
 export const Title = styled.h2`
@@ -12,3 +22,5 @@ export const Title = styled.h2`
   margin-bottom: 25px;
   text-align: center;
 `;
+
+

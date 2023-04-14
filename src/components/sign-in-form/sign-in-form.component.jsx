@@ -45,8 +45,10 @@ const SignInForm = () => {
   };
 
   return (
-    <SignInContainer>
-      <h2>Already have an account?</h2>
+    <SignInContainer >
+      <div className=''>
+    
+      <h2 >Already have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -77,6 +79,7 @@ const SignInForm = () => {
           </Button>
         </ButtonsContainer>
       </form>
+      </div>
     </SignInContainer>
   );
 };

@@ -18,8 +18,13 @@ const CartDropdown = () => {
 
   const goToCheckoutHandler = () => {
     navigate('/checkout');
+    toggleIsCartOpen();
   };
+  ////////
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
+  const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
+////////
   return (
     <CartDropdownContainer>
       <CartItems>

@@ -33,6 +33,14 @@ export const ProductCartContainer = styled.div`
       display: flex;
     }
   }
+  @media only screen and (max-width: 900px) {
+  
+
+  display:flex;
+  flex-direction: column;
+  margin-bottom:15px;
+
+}
 `;
 
 export const Footer = styled.div`

@@ -65,4 +65,11 @@ export const DirectoryItemContainer = styled.div`
       opacity: 0.9;
     }
   }
+  @media only screen and (max-width: 900px) {
+    display:flex;
+  flex-direction: column;
+  
+}
+
+ 
 `;
