@@ -8,21 +8,17 @@ export const CategoriesContext = createContext({
 
 export const CategoriesProvider = ({ children }) => {
   const [categoriesMap, setCategoriesMap] = useState({});
+  const value = { categoriesMap };
 
   useEffect(() => {
     const getCategoriesMap = async () => {
       const categoryMap = await getCategoriesAndDocuments();
-      console.log(categoryMap);
       setCategoriesMap(categoryMap);
     };
-
-    getCategoriesMap();
+     getCategoriesMap();
   }, []);
 
-  const value = { categoriesMap };
   return (
-    <CategoriesContext.Provider value={value}>
-      {children}
-    </CategoriesContext.Provider>
+    <CategoriesContext.Provider value={value}> {children} </CategoriesContext.Provider>
   );
 };

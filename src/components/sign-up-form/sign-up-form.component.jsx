@@ -34,11 +34,12 @@ const SignUpForm = () => {
     }
 
     try {
-      const { user } = await createAuthUserWithEmailAndPassword(
+        const {user} = await createAuthUserWithEmailAndPassword(
         email,
         password
-      );
-
+      );  
+        console.log(user);
+          
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
@@ -46,6 +47,7 @@ const SignUpForm = () => {
         alert('Cannot create user, email already in use');
       } else {
         console.log('user creation encountered an error', error);
+   
       }
     }
   };

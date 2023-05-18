@@ -12,11 +12,15 @@ import {
 } from './checkout.styles';
 
 const Checkout = () => {
-  const { cartItems, cartTotal } = useContext(CartContext);
+   const { cartItems, cartTotal,isCartOpen, setIsCartOpen } = useContext(CartContext);
 
-  return (
-    <CheckoutContainer>
+   const CloseCart = () => setIsCartOpen(false)
+   console.log(isCartOpen)
+
+   return (
+    <CheckoutContainer onClick={CloseCart}>
       <CheckoutHeader>
+          
         <HeaderBlock>
           <span>Product</span>
         </HeaderBlock>
@@ -32,6 +36,7 @@ const Checkout = () => {
         <HeaderBlock>
           <span>Remove</span>
         </HeaderBlock>
+        
       </CheckoutHeader>
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
