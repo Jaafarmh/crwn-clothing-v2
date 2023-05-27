@@ -5,11 +5,9 @@ import { USER_ACTION_TYPES } from "./user.types";
     currentUser : null,
   }
   export const userReducer = (state = INITIAL_STATE, action) =>{
-    console.log('dispatched');
-   
     const {type, payload} = action;
-  
-    switch(type)  {
+    
+      switch(type)  {
       case USER_ACTION_TYPES.SET_CURRENT_USER :
         return{
           ...state,
