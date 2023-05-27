@@ -58,6 +58,7 @@ export const createUserDocumentFromAuth = async (
   if (!userSnapshot.exists()) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
+  
 
     try {
       await setDoc(userDocRef, {
@@ -70,8 +71,7 @@ export const createUserDocumentFromAuth = async (
       console.log('error creating the user', error.message);
     }
   }
-
-  return userDocRef;
+  
 };
 
 export const addCollectionAndDocuments = async (
