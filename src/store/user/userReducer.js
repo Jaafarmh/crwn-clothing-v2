@@ -8,7 +8,7 @@ import { USER_ACTION_TYPES } from "./user.types";
     const {type, payload} = action;
     
       switch(type)  {
-      case USER_ACTION_TYPES.SET_CURRENT_USER :
+      case USER_ACTION_TYPES.Set_Current_User :
         return{
           ...state,
           currentUser : payload

@@ -85,7 +85,6 @@ export const CartProvider = ({ children }) => {
   const [{isCartOpen, cartItems, cartCount, cartTotal}, dispatch] =useReducer(cartReducer,INITIAL_STATE);
 
 
-
   const updateCartItemsReducer = (newCartItems) =>{
 
     const newCartCount = newCartItems.reduce(
@@ -98,7 +97,7 @@ export const CartProvider = ({ children }) => {
       0
     );
     
-     (createAction(CART_ACTION_TYPES.setCartItems,
+     dispatch(createAction(CART_ACTION_TYPES.setCartItems,
       {
       cartItems : newCartItems,
       cartCount : newCartCount,
@@ -106,8 +105,6 @@ export const CartProvider = ({ children }) => {
     }))
   }
      
- 
-
   const addItemToCart = (productToAdd) => {
     const newCartItems = addCartItem(cartItems, productToAdd);
     updateCartItemsReducer(newCartItems);

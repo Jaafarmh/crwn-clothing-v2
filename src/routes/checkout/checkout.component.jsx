@@ -12,10 +12,9 @@ import {
 } from './checkout.styles';
 
 const Checkout = () => {
-   const { cartItems, cartTotal,isCartOpen, setIsCartOpen } = useContext(CartContext);
+   const { cartItems, cartTotal, setIsCartOpen } = useContext(CartContext);
 
    const CloseCart = () => setIsCartOpen(false)
-   console.log(isCartOpen)
 
    return (
     <CheckoutContainer onClick={CloseCart}>

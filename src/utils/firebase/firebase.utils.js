@@ -19,7 +19,6 @@ import {
   getDocs,
 } from 'firebase/firestore';
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyBTEIMJX_bY0Z-V6JmF7vCDqTjVJvEu5d8",
   authDomain: "my-clothing-store-7ca82.firebaseapp.com",
