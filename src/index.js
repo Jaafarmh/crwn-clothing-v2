@@ -12,16 +12,11 @@ const rootElement = document.getElementById('root');
 
 render(
   <React.StrictMode>
-  <Provider store={store}>
-
-    <BrowserRouter>
- 
-          <CartProvider>
-            <App />
-          </CartProvider>
-     
-    </BrowserRouter>
-  </Provider>
+    <Provider store={store}>
+       <BrowserRouter>
+         <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   rootElement
 );

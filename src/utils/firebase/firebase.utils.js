@@ -82,7 +82,7 @@ export const addCollectionAndDocuments = async (
   const batch = writeBatch(db);
 
   objectsToAdd.forEach((object) => {
-    const docRef = doc(collectionRef, object.title.toLowerCase());
+    const docRef = doc(collectionRef, object.title);
     batch.set(docRef, object);
   });
 
@@ -95,13 +95,7 @@ export const getCategoriesAndDocuments = async () => {
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
-  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
-    const { title, items } = docSnapshot.data();
-    acc[title.toLowerCase()] = items;
-    return acc;
-  }, {});
-
-  return categoryMap;
+   return querySnapshot.docs.map((docSnapshot)=> docSnapshot.data());
 };
 
 
