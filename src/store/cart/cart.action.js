@@ -1,4 +1,4 @@
-import {CART_ACTION_TYPES} from "./cart.types";
+import CART_ACTION_TYPES from "./cart.types";
 import { createAction } from "../../utils/reducer/reducer.utils";
 
 export const setIsCartOpen = (bool) => 
@@ -46,17 +46,17 @@ export const setIsCartOpen = (bool) =>
 
     export const addItemToCart = (cartItems, productToAdd) => {
         const newCartItems = addCartItem(cartItems, productToAdd);
-        createAction(CART_ACTION_TYPES.Set_CartItems, newCartItems);
+      return createAction(CART_ACTION_TYPES.Set_CartItems, newCartItems);
       };
     
     export  const removeItemToCart = (cartItems, cartItemToRemove) => {
         const newCartItems = removeCartItem(cartItems, cartItemToRemove);
-      createAction(CART_ACTION_TYPES.Set_CartItems, newCartItems);
+     return createAction(CART_ACTION_TYPES.Set_CartItems, newCartItems);
     
       };
     
     export const clearItemFromCart = (cartItems, cartItemToClear) => {
         const newCartItems = clearCartItem(cartItems, cartItemToClear);
-        createAction(CART_ACTION_TYPES.Set_CartItems, newCartItems);    
+       return createAction(CART_ACTION_TYPES.Set_CartItems, newCartItems);    
       };
      

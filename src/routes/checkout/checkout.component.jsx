@@ -1,6 +1,3 @@
-import { useContext } from 'react';
-
-import { CartContext } from '../../contexts/cart.context';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 
@@ -10,11 +7,15 @@ import {
   HeaderBlock,
   Total,
 } from './checkout.styles';
+import { setIsCartOpen } from '../../store/cart/cart.action';
+import { useSelector , useDispatch} from 'react-redux';
+import { selectCartItems, selectCartTotal } from '../../store/cart/cart.selector';
 
 const Checkout = () => {
-   const { cartItems, cartTotal, setIsCartOpen } = useContext(CartContext);
-
-   const CloseCart = () => setIsCartOpen(false)
+const cartItems = useSelector(selectCartItems);
+const cartTotal = useSelector(selectCartTotal);
+const dispatch= useDispatch();
+   const CloseCart = () =>dispatch( setIsCartOpen(false));
 
    return (
     <CheckoutContainer onClick={CloseCart}>
